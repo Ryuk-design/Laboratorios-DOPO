@@ -21,7 +21,7 @@ public class PlaylistTest{
      @Test
     public void shouldCreateAEmptyPlaylist(){
         String [][] songs = {};
-        Playlist pl=new Playlist(songs);
+        Playlist pl = new Playlist(songs);
         assertEquals(0, pl.size());     
     }    
    
@@ -66,6 +66,37 @@ public class PlaylistTest{
        assertEquals(new Playlist(songs),new Playlist(sameSongs));
     }
     
+    /*
+    @Test
+    public void shouldPass(){
+       String [][] songs=
+            {{"One", "U2", "Rock", "4", "*******"},
+             {"Numb", "Linkin Park", "Rock", "Rock", null},
+             {"Alive", "Pearl Jam", "Rock", "5", "****"},
+             {"Creep", null, "Rock", null, "*****"},
+             {null, "Fleetwood Mac", null, "4", "****"}}; 
+       assertNotEquals(new Playlist(songs),new Playlist(songs));
+    }
+    
+    @Test
+    public void shouldFail(){
+       String [][] songs=
+            {{"One", "U2", "Rock", "4", "*******"},
+             {"Numb", "Linkin Park", "Rock", "Rock", null},
+             {"Alive", "Pearl Jam", "Rock", "5", "****"},
+             {"Creep", null, "Rock", null, "*****"},
+             {null, "Fleetwood Mac", null, "4", "****"}}; 
+       assertEquals(new Playlist(songs),new Playlist(songs));
+    }
+    
+    @Test
+    public void shouldErr(){
+        String [][] songs = {};
+        Playlist pl = new Playlist(songs);
+        String[] song = songs[0];
+    }
+    */
+   
     /**
      * Tears down the test fixture.
      *
