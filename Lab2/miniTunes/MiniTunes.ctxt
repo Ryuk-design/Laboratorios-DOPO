@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=MiniTunes
+comment0.text=\ MiniTunes.java\n\ \n\ @author\ ESCUELA\ 2026-02\n
+comment1.params=
+comment1.target=MiniTunes()
+comment2.params=name
+comment2.target=void\ define(java.lang.String)
+comment3.params=a\ playlist
+comment3.target=void\ assign(java.lang.String,\ java.lang.String[][])
+comment4.params=a
+comment4.target=int\ size(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment6.params=name
+comment6.target=java.lang.String\ toString(java.lang.String)
+comment7.params=a\ b\ op\ values
+comment7.target=void\ assignUnary(java.lang.String,\ java.lang.String,\ char,\ java.lang.String[])
+comment8.params=a\ b\ op\ c
+comment8.target=void\ assignBinary(java.lang.String,\ java.lang.String,\ char,\ java.lang.String)
+comment9.params=
+comment9.target=boolean\ ok()
+numComments=10

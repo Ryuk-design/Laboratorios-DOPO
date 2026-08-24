@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Playlist
+comment1.params=songs
+comment1.target=Playlist(java.lang.String[][])
+comment2.params=song
+comment2.target=Playlist\ add(java.lang.String[])
+comment3.params=song
+comment3.target=Playlist\ delete(java.lang.String[])
+comment4.params=values
+comment4.target=Playlist\ select(java.lang.String[])
+comment5.params=
+comment5.target=int\ size()
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment7.params=pl
+comment7.target=boolean\ equals(Playlist)
+comment8.params=o
+comment8.target=boolean\ equals(java.lang.Object)
+numComments=9
