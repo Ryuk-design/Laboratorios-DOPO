@@ -1,13 +1,15 @@
+import java.util.TreeMap;
+
 //Each song is described by its title, artist, genre, duration, and rating.
 //The title and artist are mandatory. The genre, duration, and rating may be unknown.
 //The combination (title, artist) must be unique. Two songs cannot have the same title and artist.
 //The duration (minutes) must be between 1 and 9.
 //The rating must be between * and *****.
-
 public class Playlist {
-    
+    private String[][] playlist;
     
     public Playlist(String [][] songs){
+        playlist = songs;
     }
     
     public Playlist add(String [] song){
@@ -23,7 +25,7 @@ public class Playlist {
     }      
 
     public int size(){
-        return -1;
+        return playlist.length;
     }    
     
    

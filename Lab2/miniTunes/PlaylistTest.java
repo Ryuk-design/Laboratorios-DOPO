@@ -16,7 +16,6 @@ public class PlaylistTest{
     public void setUp(){
         
     }
-
     
      @Test
     public void shouldCreateAEmptyPlaylist(){
@@ -33,19 +32,19 @@ public class PlaylistTest{
              {"Alive", "Pearl Jam", "Rock", "5", "****"},
              {"Creep", "Radiohead", "Rock", null, "*****"},
              {"Dreams", "Fleetwood Mac", null, "4", "****"}};
-        Playlist pl=new Playlist(songs);
+        Playlist pl = new Playlist(songs);
         assertEquals(5, pl.size());   
     }    
     
     @Test
     public void shouldNotCreateABadPlaylist(){
-        String [][] songs=
+        String [][] songs =
             {{"One", "U2", "Rock", "4", "*******"},
              {"Numb", "Linkin Park", "Rock", "Rock", null},
              {"Alive", "Pearl Jam", "Rock", "5", "****"},
              {"Creep", null, "Rock", null, "*****"},
              {null, "Fleetwood Mac", null, "4", "****"}};
-        Playlist pl=new Playlist(songs);
+        Playlist pl = new Playlist(songs);
         assertEquals(1, pl.size());   
     }  
     
