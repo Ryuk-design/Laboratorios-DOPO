@@ -6,13 +6,21 @@
 public class Playlist {
     private String[][] songs;
     
+    /**
+     * Metodo constructor de Playlist 
+     * @param String[][] songs Recibe una lista de lista con canciones.
+     */
     public Playlist(String [][] songs){
-        this.songs = new String[0][];
+        this.songs = new String[0][5];
         for(int i = 0; i < songs.length; i++){
             this.add(songs[i]);
         }
     }
     
+    /**
+     * Agrega canciones a songs con algunas condiciones
+     * @return En caso de que alguna condicion no se cumpla se retornara songs sin agregarle nada
+     */
     public Playlist add(String [] song){
         if(song[0] == null){return this;}
         if(song[1] == null){return this;}
@@ -21,7 +29,7 @@ public class Playlist {
         for(int i = 0; i < songs.length; i++){
             if(songs[i][0].replace(" ","").toUpperCase().equals(song[0].replace(" ","").toUpperCase()) 
                 &&
-                songs[i][1].replace(" ","").toUpperCase().equals(song[1].replace(" ","").toUpperCase())){
+               songs[i][1].replace(" ","").toUpperCase().equals(song[1].replace(" ","").toUpperCase())){
             return this;
             }
         }
@@ -44,6 +52,9 @@ public class Playlist {
         return null;
     }      
 
+    /**
+     * Retorna la cantidad de canciones en la playlist
+     */
     public int size(){
         return songs.length;
     }    
@@ -61,6 +72,9 @@ public class Playlist {
       return "";
     }
     
+    /**
+     * 
+     */
     public boolean equals(Playlist pl){
         if((this.size() == (pl.size())) == false){
             return false;
