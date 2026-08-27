@@ -97,4 +97,8 @@ public class Playlist {
     public boolean equals(Object o){
         return equals((Playlist)o);
     }
+    
+    public String[][] getSongs(){
+        return songs;
+    }
 }

@@ -20,4 +20,6 @@ comment7.target=boolean\ equals(Playlist)
 comment7.text=\r\n\ \r\n
 comment8.params=o
 comment8.target=boolean\ equals(java.lang.Object)
-numComments=9
+comment9.params=
+comment9.target=java.lang.String[][]\ getSongs()
+numComments=10
