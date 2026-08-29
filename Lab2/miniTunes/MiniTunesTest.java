@@ -138,6 +138,117 @@ public class MiniTunesTest
         String[][] songs = min.playlistSongs(name);
         assertEquals(0, songs.length);
     }
+    // Ciclo 2
+    // addSong Method.
+    @Test
+    //Each song is described by its title, artist, genre, duration, and rating.
+    //The title and artist are mandatory. The genre, duration, and rating may be unknown.
+    //The combination (title, artist) must be unique. Two songs cannot have the same title and artist.
+    //The duration (minutes) must be between 1 and 9.
+    //The rating must be between * and *****.
+    public void shouldNotAddInvalidSong(){
+        MiniTunes min = new MiniTunes();
+        String name = "Rock";
+        min.define(name); 
+        // cancion necesaria para crear una playlist
+        String[][] s = {{"Creep", "Radiohead", "Rock", null, "*****"}};
+        min.assign(name, s);
+        // tiene 7 de calificacion
+        String[] song = {"One", "U2", "Rock", "4", "*******"};
+        min.addSong(name, song);
+        // tiene "Rock" en la duracion
+        String[] song1 = {"Numb", "Linkin Park", "Rock", "Rock", null};
+        min.addSong(name, song1);
+        // no tiene artista definida
+        String[] song2 = {"Creep", null, "Rock", null, "*****"};
+        min.addSong(name, song2);
+        // la cancion no tiene nombre
+        String[] song3 = {null, "Fleetwood Mac", null, "4", "****"};
+        min.addSong(name, song3);
+        // cancion repetida
+        String[] song4 = {"Creep", "Radiohead", "Rock", null, "*****"};
+        min.addSong(name, song4);
+        // cancion con duracion mayor a 9
+        String[] song5 = {"Alive", "Pearl Jam", "Rock", "10", "****"};
+        min.addSong(name, song5);
+        assertEquals(1, min.getPlaylist(name).size());
+    }
+    
+    @Test
+    public void shouldAddValidSongToPlaylist(){
+        MiniTunes min = new MiniTunes();
+        String name = "Rock and psychedelic Rock";
+        min.define(name); 
+        String[][] s = {{"Creep", "Radiohead", "Rock", null, "*****"}};
+        min.assign(name, s);
+        String [] song = {"Time", "Pink Floyd", "psychedelic Rock", "7", "*****"};
+        min.addSong(name, song);
+        assertEquals(2, min.getPlaylist(name).size());
+    }
+    
+    @Test
+    public void shouldNotAddSongIfPlaylistNameDoesNotExist(){
+        MiniTunes min = new MiniTunes();
+        String name = "No existo"; 
+        String [] song = {"Time", "Pink Floyd", "psychedelic Rock", "7", "*****"};
+        min.addSong(name, song);
+        assertFalse(min.ok());
+    }
+    
+    @Test
+    public void shouldNotAddSongIfPlaylistNotAssigned(){
+        MiniTunes min = new MiniTunes();
+        String name = "Rock Classics";
+        String[] song = {"Time", "Pink Floyd", "Psychedelic Rock", "7", "*****"};
+        min.define(name);
+        min.addSong(name, song);
+        assertFalse(min.ok());
+    }
+    // deleteSong Method.
+    
+    @Test
+    public void shouldDeleteSongFromExistingPlaylist(){
+        MiniTunes min = new MiniTunes();
+        String name = "Rock Classics";
+        min.define(name);
+        String[] song = {"One", "U2", "Rock", "4", "*****"};
+        String[][] s = {song};
+        min.assign(name, s);
+        min.deleteSong(name, song);
+        assertEquals(0, min.getPlaylist(name).size());
+    }
+    
+    @Test
+    public void shouldNotDeleteSongFromNonExistingName(){
+        MiniTunes min = new MiniTunes();
+        String name = "No existo"; 
+        String [] song = {"Time", "Pink Floyd", "psychedelic Rock", "7", "*****"};
+        min.deleteSong(name, song);
+        assertFalse(min.ok());
+    }
+    
+    @Test
+    public void shouldNotDeleteSongFromNullPlaylist(){
+        MiniTunes min = new MiniTunes();
+        String name = "Rock Classics";
+        String[] song = {"Time", "Pink Floyd", "Psychedelic Rock", "7", "*****"};
+        min.define(name);
+        min.deleteSong(name, song);
+        assertFalse(min.ok());
+    }
+    
+    @Test
+    public void shouldNotDeleteNonExistingSongInPlaylist(){
+        MiniTunes min = new MiniTunes();
+        String name = "Rock Classics";
+        min.define(name);
+        String[] song = {"One", "U2", "Rock", "4", "*****"};
+        String[][] s = {song};
+        String[] song1 = {"Creep", "Radiohead", "Rock", null, "*****"};
+        min.assign(name, s);
+        min.deleteSong(name, song1);
+        assertEquals(1, min.getPlaylist(name).size());
+    }
     
     @After
     public void tearDown()

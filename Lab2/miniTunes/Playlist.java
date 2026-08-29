@@ -25,12 +25,14 @@ public class Playlist {
         if(song[0] == null){return this;}
         if(song[1] == null){return this;}
         if(song[3] != null && (song[3].matches("[1-9]")) == false){return this;}
-        if(song[4] != null && (song[4].replace(" ","").length() > 5 || song[4].replace(" ","").length() < 1)){return this;}
+        if(song[4] != null && (song[4].replace(" ","").length() > 5 
+           || 
+           song[4].replace(" ","").length() < 1)){return this;}
         for(int i = 0; i < songs.length; i++){
             if(songs[i][0].replace(" ","").toUpperCase().equals(song[0].replace(" ","").toUpperCase()) 
                 &&
                songs[i][1].replace(" ","").toUpperCase().equals(song[1].replace(" ","").toUpperCase())){
-            return this;
+                return this;
             }
         }
         String[][] newsongs = new String[songs.length + 1][5];
@@ -45,7 +47,29 @@ public class Playlist {
     }
     
     public Playlist delete(String [] song){
-        return null;
+        boolean is_on_playlist = false;
+        for(int i = 0; i < songs.length; i++){
+            if(songs[i][0].replace(" ","").toUpperCase().equals(song[0].replace(" ","").toUpperCase()) 
+                 &&
+                 songs[i][1].replace(" ","").toUpperCase().equals(song[1].replace(" ","").toUpperCase())){
+                is_on_playlist = true;
+            }
+        }
+        if(is_on_playlist == false){return this;}
+        String[][] newsongs = new String[songs.length - 1][5];
+        int k = 0;
+        for(int i = 0; i < songs.length; i++){
+            if(!(songs[i][0].replace(" ","").toUpperCase().equals(song[0].replace(" ","").toUpperCase()) 
+                 &&
+                 songs[i][1].replace(" ","").toUpperCase().equals(song[1].replace(" ","").toUpperCase()))){
+                for(int j = 0; j <= 4; j++){   
+                    newsongs[k][j] = songs[i][j];
+                }
+                k++;
+            }
+        }
+        songs = newsongs;
+        return this;
     }
     
     public Playlist select(String [] values){

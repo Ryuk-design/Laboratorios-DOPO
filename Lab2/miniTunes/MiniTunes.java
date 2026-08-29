@@ -8,9 +8,11 @@ import java.util.TreeMap;
 public class MiniTunes{
     
     private TreeMap<String,Playlist> playlists;
+    private boolean lastOperationOk;
     
     public MiniTunes(){
         playlists = new TreeMap<String, Playlist>();
+        lastOperationOk = true;
     }
 
     /**
@@ -20,9 +22,16 @@ public class MiniTunes{
      * @return If the name is null or if the name already exist, the method do nothing.
      */
     public void define(String name){
-        if(name == null){return;}
-        if(playlists.containsKey(name)){return;}
+        if(name == null){
+            lastOperationOk = false;
+            return;
+        }
+        if(playlists.containsKey(name)){
+            lastOperationOk = false;
+            return;
+        }
         playlists.put(name, null);
+        lastOperationOk = true;
     }
      
     /**
@@ -32,8 +41,12 @@ public class MiniTunes{
      * @return If trying to assign a non existing name
      */
     public void assign(String a, String[][] playlist){
-        if(!playlists.containsKey(a)){return;}
+        if(!playlists.containsKey(a)){
+            lastOperationOk = false;
+            return;
+        }
         playlists.put(a, new Playlist(playlist));
+        lastOperationOk = true;
     }    
     
     /**
@@ -57,9 +70,49 @@ public class MiniTunes{
      */
     public String[][] playlistSongs(String name){
         if(playlists.size() == 0){return new String[0][0];}
-        if(!playlists.containsKey(name)){return new String[0][0];}
+        if(!playlists.containsKey(name)){
+            lastOperationOk = false;
+            return new String[0][0];
+        }
         if(playlists.get(name) == null){return new String[0][0];}
+        lastOperationOk = true;
         return playlists.get(name).getSongs();
+    }
+    
+    /**
+     * Add a song on an existing playlist
+     *@param name name of the playlist
+     *@param String [] song  song to add
+     */
+    public void addSong(String name, String[] song){
+        if(!playlists.containsKey(name)){
+            lastOperationOk = false;
+            return;        
+        }
+        if(playlists.get(name) == null){
+            lastOperationOk = false;
+            return;
+        }
+        playlists.get(name).add(song);
+        lastOperationOk = true;
+    }
+    
+    /**
+     *Delete a song on an existing playlist
+     *@param name name of the playlist
+     *@param String [] song  song to delete
+     */
+    public void deleteSong(String name, String[] song){
+        if(!playlists.containsKey(name)){
+            lastOperationOk = false;
+            return;        
+        }
+        if(playlists.get(name) == null){
+            lastOperationOk = false;
+            return;
+        }
+        playlists.get(name).delete(song);
+        lastOperationOk = true;
     }
     
     //Return a playlist's size
@@ -92,14 +145,12 @@ public class MiniTunes{
     public void assignBinary(String a, String b, char op, String c){
     }
   
-   
-    //If the last operation was successfully completed
-    public boolean ok(){
-        return false;
-    }
-    
     public boolean containsPlaylistName(String name){
         return playlists.containsKey(name);
+    }
+    //If the last operation was successfully completed
+    public boolean ok(){
+        return lastOperationOk;
     }
     
     public int playlistsSize(){
