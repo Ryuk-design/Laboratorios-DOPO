@@ -174,37 +174,7 @@ public class Playlist {
     //CREEP    RADIOHEAD       ROCK               *****
     //DREAMS   FLEETWOOD MAC   .              4   ****
     public String toString(){
-        String[] headers = {"TITLE", "ARTIST", "GENRE", "DURATION", "RATING"};
-        int[] widths = new int[5];
-        for(int j = 0; j <= 4; j++){
-            widths[j] = headers[j].length();
-        }
-        for(int i = 0; i < songs.length; i++){
-            for(int j = 0; j <= 4; j++){
-                String valor = songs[i][j];
-                if(valor == null){valor = "";}
-                if(valor.length() > widths[j]){
-                    widths[j] = valor.length();
-                }
-            }
-        }
-        String resultado = "";
-        for(int j = 0; j <= 4; j++){
-            resultado = resultado + String.format("%-" + widths[j] + "s", headers[j]);
-            if(j < 4){resultado = resultado + "   ";}
-        }
-        resultado = resultado + "\n";
-        for(int i = 0; i < songs.length; i++){
-            for(int j = 0; j <= 4; j++){
-                String valor = songs[i][j];
-                if(valor == null){valor = "";}
-                valor = valor.trim().toUpperCase();
-                resultado = resultado + String.format("%-" + widths[j] + "s", valor);
-                if(j < 4){resultado = resultado + "   ";}
-            }
-            if(i < songs.length - 1){resultado = resultado + "\n";}
-        }
-        return resultado;
+        return null;
     }
     
     /**
