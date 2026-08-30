@@ -309,6 +309,93 @@ public class MiniTunesTest
         assertTrue(min.ok());
         assertEquals(1, result.size());
     }
+    // Ciclo 3
+    
+    @Test
+    public void shouldAssignUnionOfTwoPlaylists(){
+        MiniTunes min = new MiniTunes();
+        String[][] s1 = {{"One", "U2", "Rock", "4", "*****"}};
+        String[][] s2 = {{"Numb", "Linkin Park", "Rock", "3", "****"}};
+        min.define("A");
+        min.define("B");
+        min.define("C");
+        min.assign("A", s1);
+        min.assign("B", s2);
+        min.assignBinary("C", "A", 'u', "B");
+        assertEquals(2, min.getPlaylist("C").size());
+        assertTrue(min.ok());
+    }
+    
+    @Test
+    public void shouldAssignIntersectionOfTwoPlaylists(){
+        MiniTunes min = new MiniTunes();
+        String[][] s1 = {{"One", "U2", "Rock", "4", "*****"}};
+        String[][] s2 = {{"One", "U2", "Rock", "4", "*****"}};
+        min.define("A");
+        min.define("B");
+        min.define("C");
+        min.assign("A", s1);
+        min.assign("B", s2);
+        min.assignBinary("C", "A", 'i', "B");
+        assertEquals(1, min.getPlaylist("C").size());
+        assertTrue(min.ok());
+    }
+    
+    @Test
+    public void shouldAssignDifferenceOfTwoPlaylists(){
+        MiniTunes min = new MiniTunes();
+        String[][] s1 = {
+            {"One", "U2", "Rock", "4", "*****"},
+            {"Numb", "Linkin Park", "Rock", "3", "****"}
+        };
+        String[][] s2 = {{"One", "U2", "Rock", "4", "*****"}};
+        min.define("A");
+        min.define("B");
+        min.define("C");
+        min.assign("A", s1);
+        min.assign("B", s2);
+        min.assignBinary("C", "A", 'd', "B");
+        assertEquals(1, min.getPlaylist("C").size());
+        assertTrue(min.ok());
+    }
+    
+    @Test
+    public void shouldNotAssignBinaryIfFirstNameDoesNotExist(){
+        MiniTunes min = new MiniTunes();
+        min.define("B");
+        min.assign("B", new String[0][5]);
+        min.assignBinary("C", "NoExiste", 'u', "B");
+        assertFalse(min.ok());
+    }
+    
+    @Test
+    public void shouldNotAssignBinaryIfSecondNameDoesNotExist(){
+        MiniTunes min = new MiniTunes();
+        min.define("A");
+        min.assign("A", new String[0][5]);
+        min.assignBinary("C", "A", 'u', "NoExiste");
+        assertFalse(min.ok());
+    }
+    
+    @Test
+    public void shouldNotAssignBinaryIfPlaylistNotAssigned(){
+        MiniTunes min = new MiniTunes();
+        min.define("A");
+        min.define("B");
+        min.assignBinary("C", "A", 'u', "B");
+        assertFalse(min.ok());
+    }
+    
+    @Test
+    public void shouldNotAssignBinaryWithInvalidOperator(){
+        MiniTunes min = new MiniTunes();
+        min.define("A");
+        min.define("B");
+        min.assign("A", new String[0][5]);
+        min.assign("B", new String[0][5]);
+        min.assignBinary("C", "A", 'x', "B");
+        assertFalse(min.ok());
+    }
     
     @After
     public void tearDown()

@@ -46,6 +46,10 @@ public class Playlist {
         return this;
     }
     
+    /**
+     * Deletes a song from a playlist
+     * @param song song to eliminate
+     */
     public Playlist delete(String [] song){
         boolean is_on_playlist = false;
         for(int i = 0; i < songs.length; i++){
@@ -72,6 +76,11 @@ public class Playlist {
         return this;
     }
     
+    
+    /**
+     * filter the songs of a playlist by given values
+     * @param values values to filter by
+     */
     public Playlist select(String [] values){
         Playlist pl = new Playlist(new String[0][5]);
         for(int i = 0; i < songs.length; i++){
@@ -97,9 +106,59 @@ public class Playlist {
         }
         return pl;
     }      
-
+    
     /**
-     * Retorna la cantidad de canciones en la playlist
+     * Union two playlists
+     * @return the union of two playlists
+     */
+    public Playlist union(Playlist other){
+        Playlist res = new Playlist(new String[0][5]);
+        for(int i = 0; i < this.songs.length; i++){
+            res = res.add(this.songs[i]);
+        }
+        for(int i = 0; i < other.songs.length; i++){
+            res = res.add(other.songs[i]);
+        }
+        return res;
+    }
+    
+    /**
+     * @return the intersection of two playlists
+     */
+    public Playlist intersection(Playlist other){
+        Playlist res = new Playlist(new String[0][5]);
+        for(int i = 0; i < this.songs.length; i++){
+            for(int j = 0; j < other.songs.length; j++){
+                if(this.songs[i][0].replace(" ","").toUpperCase().equals(other.songs[j][0].replace(" ","").toUpperCase())
+                    && this.songs[i][1].replace(" ","").toUpperCase().equals(other.songs[j][1].replace(" ","").toUpperCase())){
+                    res = res.add(this.songs[i]);
+                }
+            }
+        }
+        return res;
+    }
+    
+    /**
+     *@return the difference between two playlists 
+     */
+    public Playlist difference(Playlist other){
+        Playlist res = new Playlist(new String[0][5]);
+        for(int i = 0; i < this.songs.length; i++){
+            res = res.add(this.songs[i]);
+        }
+        for(int i = 0; i < this.songs.length; i++){
+            for(int j = 0; j < other.songs.length; j++)
+                if(this.songs[i][0].replace(" ","").toUpperCase().equals(other.songs[j][0].replace(" ","").toUpperCase())
+                    && 
+                   this.songs[i][1].replace(" ","").toUpperCase().equals(other.songs[j][1].replace(" ","").toUpperCase())){
+                    res = res.delete(res.songs[i]);
+                }
+        }
+        return res;
+    }
+    
+    /**
+     * @return the size of a playlist
      */
     public int size(){
         return songs.length;
@@ -119,7 +178,8 @@ public class Playlist {
     }
     
     /**
-     * 
+     * compare two playlists
+     * @return true if the two playlists are equal
      */
     public boolean equals(Playlist pl){
         if((this.size() == (pl.size())) == false){

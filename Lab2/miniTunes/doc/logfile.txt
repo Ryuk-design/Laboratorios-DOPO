@@ -1,51 +1,50 @@
-Project documentation
+Class documentation
 <---- javadoc command: ---->
-/usr/lib/jvm/java-8-oracle/bin/javadoc
--sourcepath
-/home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator
--source
-1.8
--classpath
-/usr/share/bluej/bluejcore.jar:/usr/share/bluej/junit-4.11.jar:/usr/share/bluej/hamcrest-core-1.3.jar:/usr/share/bluej/lang-stride.jar:/usr/share/bluej/userlib/pi4j-core.jar:/usr/share/bluej/userlib/pi4j-service.jar:/usr/share/bluej/userlib/pi4j-device.jar:/usr/share/bluej/userlib/pi4j-gpio-extension.jar:/home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator
--d
-/home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc
--encoding
-UTF-8
--charset
-UTF-8
--doctitle
-decisionTreeCalculator
--windowtitle
-decisionTreeCalculator
+C:\Program Files\BlueJ\jdk\bin\javadoc.exe
 -author
 -version
 -nodeprecated
 -package
 -Xdoclint:none
--link
-http://download.oracle.com/javase/8/docs/api/
-/home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/DecisionTree.java
-/home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/DecisionTreeTest.java
-/home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/DecisionTreeCalculator.java
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+21
+-classpath
+C:\Program Files\BlueJ\lib\bluejcore.jar;C:\Program Files\BlueJ\lib\javafx-base-23.0.2-win.jar;C:\Program Files\BlueJ\lib\javafx-controls-23.0.2-win.jar;C:\Program Files\BlueJ\lib\javafx-fxml-23.0.2-win.jar;C:\Program Files\BlueJ\lib\javafx-graphics-23.0.2-win.jar;C:\Program Files\BlueJ\lib\javafx-media-23.0.2-win.jar;C:\Program Files\BlueJ\lib\javafx-swing-23.0.2-win.jar;C:\Program Files\BlueJ\lib\javafx-web-23.0.2-win.jar;C:\Program Files\BlueJ\lib\junit-4.12.jar;C:\Program Files\BlueJ\lib\junit-jupiter-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-jupiter-api-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-jupiter-engine-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-jupiter-params-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-commons-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-engine-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-launcher-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-suite-api-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-vintage-engine-5.5.2.jar;C:\Program Files\BlueJ\lib\hamcrest-core-1.3.jar;C:\Program Files\BlueJ\lib\opentest4j-1.2.0.jar;C:\Program Files\BlueJ\lib\lang-stride.jar;C:\Program Files\BlueJ\lib\javafx\javafx.base.jar;C:\Program Files\BlueJ\lib\javafx\javafx.controls.jar;C:\Program Files\BlueJ\lib\javafx\javafx.fxml.jar;C:\Program Files\BlueJ\lib\javafx\javafx.graphics.jar;C:\Program Files\BlueJ\lib\javafx\javafx.media.jar;C:\Program Files\BlueJ\lib\javafx\javafx.properties.jar;C:\Program Files\BlueJ\lib\javafx\javafx.swing.jar;C:\Program Files\BlueJ\lib\javafx\javafx.web.jar;C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes
+-d
+C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\MiniTunes.java
 <---- end of javadoc command ---->
-Loading source file /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/DecisionTree.java...
-Loading source file /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/DecisionTreeTest.java...
-Loading source file /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/DecisionTreeCalculator.java...
+Loading source file C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\MiniTunes.java...
 Constructing Javadoc information...
-Standard Doclet version 1.8.0_201
+Standard Doclet version 21.0.6+7-LTS
 Building tree for all the packages and classes...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/DecisionTree.html...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/DecisionTreeCalculator.html...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/DecisionTreeTest.html...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/package-frame.html...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/package-summary.html...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/package-tree.html...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/constant-values.html...
-Building index for all the packages and classes...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/overview-tree.html...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/index-all.html...
-Building index for all classes...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/allclasses-frame.html...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/allclasses-noframe.html...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/index.html...
-Generating /home/midr/Dropbox/DOCENCIA/DOPO-2025-02/JAVA/CALCULADORAS/2025-02 DecisionTreeCalculator/decisionTreeCalculator/doc/help-doc.html...
+Generating C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\doc\MiniTunes.html...
+C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\MiniTunes.java:20: warning: @param argument "a" is not a parameter name.
+     * @param a   Name
+       ^
+C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\MiniTunes.java:23: warning: @return tag cannot be used in method with void return type.
+    public void define(String name){
+                ^
+C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\MiniTunes.java:41: warning: @return tag cannot be used in method with void return type.
+    public void assign(String a, String[][] playlist){
+                ^
+C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\MiniTunes.java:51: warning: Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, module, package, class/interface.
+     * @author Samuel Ahumada
+       ^
+C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\MiniTunes.java:83: warning: @param argument "String" is not a parameter name.
+     *@param String [] song  song to add
+      ^
+C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\MiniTunes.java:101: warning: @param argument "String" is not a parameter name.
+     *@param String [] song  song to delete
+      ^
+Generating C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\doc\package-summary.html...
+Generating C:\Users\user\OneDrive - ESCUELA COLOMBIANA DE INGENIERIA JULIO GARAVITO\Escritorio\Uni\Sexto_semestre\DOPO\Laboratorios_github\Laboratorios-DOPO\Lab2\miniTunes\doc\index.html...
+6 warnings
