@@ -144,13 +144,24 @@ public class MiniTunes{
     
     //Returns the playlist names in alphabetical order. comma-separated
     public String toString(){
-        return null;
+        String resultado = "";
+        for(String nombre : playlists.keySet()){
+            resultado = resultado + nombre + ":\n" + toString(nombre) + "\n";
+        }
+        return resultado;
     }
     
     // Returns the string representation of a playlist.
     public String toString(String name){
-        return null;
-    }    
+        if(!playlists.containsKey(name)){
+            return "";
+        }
+        Playlist pl = playlists.get(name);
+        if(pl == null){
+            return "";
+        }   
+        return pl.toString();
+    }   
     
     //Assigns the value of a unary operation to a playlist name
     // a = b op parameters
