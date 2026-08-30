@@ -205,7 +205,6 @@ public class MiniTunesTest
         assertFalse(min.ok());
     }
     // deleteSong Method.
-    
     @Test
     public void shouldDeleteSongFromExistingPlaylist(){
         MiniTunes min = new MiniTunes();
@@ -249,11 +248,70 @@ public class MiniTunesTest
         min.deleteSong(name, song1);
         assertEquals(1, min.getPlaylist(name).size());
     }
+    // select Method.
+    @Test
+    public void shouldNotSelectIfPlaylistNameDoesNotExist(){
+        MiniTunes min = new MiniTunes();
+        String name = "No existo";
+        String[] values = {"One", "U2", null, null, null};        
+        Playlist result = min.select(name, values);        
+        assertNull(result);
+        assertFalse(min.ok());
+    }
+    
+    @Test
+    public void shouldNotSelectIfPlaylistNotAssigned(){
+        MiniTunes min = new MiniTunes();
+        String name = "Rock";
+        String[] values = {"One", "U2", null, null, null};        
+        min.define(name);
+        Playlist result = min.select(name, values);        
+        assertNull(result);
+        assertFalse(min.ok());
+    }
+    
+    @Test
+    public void shouldNotSelectIfTitleIsNull(){
+        MiniTunes min = new MiniTunes();
+        String name = "Rock";
+        String[][] s = {{"One", "U2", "Rock", "4", "*****"}};
+        String[] values = {null, "U2", null, null, null};        
+        min.define(name);
+        min.assign(name, s);
+        Playlist resultado = min.select(name, values);        
+        assertNull(resultado);
+        assertFalse(min.ok());
+    }
+    
+    @Test
+    public void shouldNotSelectIfArtistIsNull(){
+        MiniTunes min = new MiniTunes();
+        String name = "Rock";
+        String[][] s = {{"One", "U2", "Rock", "4", "*****"}};
+        String[] values = {"One", null, null, null, null};        
+        min.define(name);
+        min.assign(name, s);
+        Playlist resultado = min.select(name, values);       
+        assertNull(resultado);
+        assertFalse(min.ok());
+    }
+    
+    @Test
+    public void shouldSelectWhenAllValidationsPass(){
+        MiniTunes min = new MiniTunes();
+        String name = "Rock";
+        String[][] s = {{"One", "U2", "Rock", "4", "*****"}};
+        String[] values = {"One", "U2", "Rock", "4", "*****"};        
+        min.define(name);
+        min.assign(name, s);
+        Playlist result = min.select(name, values);        
+        assertNotNull(result);
+        assertTrue(min.ok());
+        assertEquals(1, result.size());
+    }
     
     @After
     public void tearDown()
     {
     }
-    
-    
 }

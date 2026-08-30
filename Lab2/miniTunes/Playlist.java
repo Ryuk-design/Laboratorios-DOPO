@@ -73,7 +73,29 @@ public class Playlist {
     }
     
     public Playlist select(String [] values){
-        return null;
+        Playlist pl = new Playlist(new String[0][5]);
+        for(int i = 0; i < songs.length; i++){
+            boolean c = true;
+            for(int j = 0; j <= 4; j++){
+                String a = songs[i][j];
+                String b = values[j];
+                if(a == null && b == null){
+                    continue;
+                } else if(a == null || b == null){
+                    c = false;
+                    break;
+                } else{
+                    if(!a.replace(" ","").toUpperCase().equals(b.replace(" ","").toUpperCase())){
+                        c = false;
+                        break;
+                    }
+                }
+            }
+            if(c){
+                pl.add(songs[i]);
+            }
+        }
+        return pl;
     }      
 
     /**

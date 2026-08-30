@@ -115,9 +115,30 @@ public class MiniTunes{
         lastOperationOk = true;
     }
     
+    public Playlist select(String name, String[] values){
+        if(playlists.containsKey(name) == false){
+            lastOperationOk = false;
+            return null;   
+        }
+        if(playlists.get(name) == null){
+            lastOperationOk = false;
+            return null;
+        }
+        if(values[0] == null){
+            lastOperationOk = false;
+            return null;
+        }
+        if(values[1] == null){
+            lastOperationOk = false;
+            return null; 
+        }
+        lastOperationOk = true;
+        return playlists.get(name).select(values);
+    }
+    
     //Return a playlist's size
     public int size(String a){
-        return -1;
+        return playlists.get(a).size();
     }
     
     //Returns the playlist names in alphabetical order. comma-separated
